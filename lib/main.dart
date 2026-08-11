@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'core/theme/app_theme.dart';
-import 'features/home/presentation/pages/home_page.dart';
+import 'features/ai_chat/presentation/pages/chat_page.dart';import 'features/home/presentation/pages/home_page.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,9 +21,8 @@ class AITeacherAssistantApp extends StatelessWidget {
     return MaterialApp(
       title: 'المساعد الذكي للمعلم',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
+      
+      // إعدادات اللغة العربية والاتجاه (RTL)
       locale: const Locale('ar', 'SA'),
       supportedLocales: const [
         Locale('ar', 'SA'),
@@ -34,7 +33,14 @@ class AITeacherAssistantApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+
+      // الصفحة الرئيسية
       home: const HomePage(),
+
     );
   }
 }
+
